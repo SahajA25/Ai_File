@@ -1,6 +1,0 @@
-Metadata-Version: 2.1
-Name: aifile
-Version: 0.3
-Requires-Dist: scikit-learn
-Requires-Dist: numpy
-Requires-Dist: speechrecognition
