@@ -2,6 +2,8 @@
 from sklearn.ensemble import RandomForestClassifier
 from sklearn.preprocessing import StandardScaler
 import numpy as np
+import tempfile
+import shutil
 import os
 
 
@@ -40,6 +42,28 @@ class FileManager:
                 print(f"Error accessing drive {drive_letter}: {e}")
 
         return all_files
+    
+    def delete_temporary_files(self):
+        # Delete temporary files in system temp directory
+        temp_dir = tempfile.gettempdir()
+        for file_name in os.listdir(temp_dir):
+            file_path = os.path.join(temp_dir, file_name)
+            try:
+                if os.path.isfile(file_path):
+                    os.unlink(file_path)
+            except Exception as e:
+                print(f"Error deleting {file_path}: {e}")
+
+        # Delete temporary files in user temp directory (%temp%)
+        user_temp = os.environ.get('temp')
+        if user_temp:
+            for file_name in os.listdir(user_temp):
+                file_path = os.path.join(user_temp, file_name)
+                try:
+                    if os.path.isfile(file_path):
+                        os.unlink(file_path)
+                except Exception as e:
+                    print(f"Error deleting {file_path}: {e}")
 
     def copy_file(self, source, destination):
         # Placeholder for file copy logic
