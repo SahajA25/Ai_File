@@ -39,10 +39,20 @@ AIFile is an advanced file management module designed to enhance file organizati
    - Compatible with Python 3.x on various operating systems.
    - Check dependencies and ensure proper configurations.
 
+5. **Write a Script or Use Python Interactive Shell:**
+   - Create a Python script or use the Python interactive shell to interact with your module. For example, you can create a new script (e.g., my_script.py) with 
+     the following content:
+
+      ///from aifile.filely import main
+
+        if __name__ == "__main__":
+            main() ///
+
+
 **Next Steps:**
 Explore opportunities to further enhance AIFile's capabilities, such as integrating with cloud services, extending voice recognition features, or implementing more sophisticated machine learning algorithms.
 
-**Version: 0.2**
+**Version: 0.5**
 
 **Author: [SAHAJ A]**
 
