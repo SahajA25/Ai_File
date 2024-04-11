@@ -39,9 +39,10 @@ def main():
         print("\nAIFile Menu:")
         print("1. Text Search")
         print("2. Voice Search")
-        print("3. Exit")
+        print("3. Delete Temporary Files")
+        print("4. Exit")
 
-        choice = input("Enter your choice (1/2/3): ")
+        choice = input("Enter your choice (1/2/3/4): ")
 
         if choice == '1':
             query = input("Enter text for search: ")
@@ -49,10 +50,14 @@ def main():
         elif choice == '2':
             voice_search(file_manager)
         elif choice == '3':
+            print("Deleting temporary files...")
+            file_manager.delete_temporary_files()
+            print("Temporary files deleted successfully!")
+        elif choice == '4':
             print("Exiting AIFile. Goodbye!")
             break
         else:
-            print("Invalid choice. Please enter 1, 2, or 3.")
-
+            print("Invalid choice. Please enter 1, 2, 3, or 4.")
+            
 if __name__ == "__main__":
     main()
